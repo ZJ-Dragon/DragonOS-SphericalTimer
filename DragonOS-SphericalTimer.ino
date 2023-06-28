@@ -8,6 +8,7 @@
 
 Adafruit_ST7735 tft = Adafruit_ST7735(9, 10, -1);
 U8G2_FOR_ADAFRUIT_GFX u8g2_for_adafruit_gfx;
+String Mode[]={((String)("STOP WATCH")), ((String)("COUNT DOWN")), ((String)("MIX")), ((String)("TODO")), ((String)("COUNTDOWN DAY"))};
 
 void setup() {
   // put your setup code here, to run once:
