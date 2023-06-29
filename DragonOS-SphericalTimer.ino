@@ -1,4 +1,4 @@
-// DragonOS_SphericalTimer_v.17.0.23621.1001
+// DragonOS_SphericalTimer_v.17.0.23621.1002
 // This is an unstable version to test
 
 #include <Adafruit_GFX.h>
@@ -17,6 +17,7 @@ U8G2_FOR_ADAFRUIT_GFX u8g2_for_adafruit_gfx;
 String Mode[]={((String)("STOP WATCH")), ((String)("COUNT DOWN")), ((String)("COMPREHENSIVE")), ((String)("TODO")), ((String)("COUNTDOWN DAY"))};
 
 void setup() {
+
   // put your setup code here, to run once:
 
   /* Initialize TFT display */
@@ -33,22 +34,36 @@ void setup() {
 }
 
 void loop() {
+
   // put your main code here, to run repeatedly:
 
   /* Power on and boot the device -------------------- */
   /* Exactly, there is a vitural boot code ----------- */
 
-  u8g2_for_adafruit_gfx.setCursor(0,20);                      // Locate where to display
-  u8g2_for_adafruit_gfx.setForegroundColor((65126));          // Clear the display
-  u8g2_for_adafruit_gfx.print("DragonTimer");                 // Display the boot logo
+  u8g2_for_adafruit_gfx.setCursor(0,20);
+  u8g2_for_adafruit_gfx.setForegroundColor((65535));
+  u8g2_for_adafruit_gfx.print("DragonTimer");					// Display the boot logo
 
-  delay(3000);                                                // Special effect for wait
+  delay(3000);
 
-  u8g2_for_adafruit_gfx.setCursor(0,20);                      
-  u8g2_for_adafruit_gfx.setForegroundColor((65126));          
-  u8g2_for_adafruit_gfx.print("DragonOS SphericalTimer");     // Display the OS name
+  tft.fillScreen((0));											// Clear the display
 
-  u8g2_for_adafruit_gfx.setCursor(0,40);                      
-  u8g2_for_adafruit_gfx.setForegroundColor((65126));          
-  u8g2_for_adafruit_gfx.print("v.17.0.23621.1000");           // Display the version info
+  delay(1000);
+
+  u8g2_for_adafruit_gfx.setFont(u8g2_font_timR14_tf);
+  u8g2_for_adafruit_gfx.setCursor(0,20);
+  u8g2_for_adafruit_gfx.setForegroundColor((65535));
+  u8g2_for_adafruit_gfx.print("DragonOS SphericalTimer");		// Display the OS name
+  
+  u8g2_for_adafruit_gfx.setFont(u8g2_font_timR10_tf);
+  u8g2_for_adafruit_gfx.setCursor(0,40);
+  u8g2_for_adafruit_gfx.setForegroundColor((65535));
+  u8g2_for_adafruit_gfx.print("v.17.0.23621.1002");				// Display the OS info
+  
+  delay(5000);
+
+  tft.fillScreen((0));											//Clear the display
+
+  /* End the boot progress and start the main code --- */
+
 }

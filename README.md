@@ -3,7 +3,7 @@ An operating system for DragonTimer.
 
 ---
 
-Version: DragonOS SphericalTimer 17.0.23621.1001
+Version: DragonOS SphericalTimer 17.0.23621.1002
 
 ---
 
